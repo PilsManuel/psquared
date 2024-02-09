@@ -1,6 +1,6 @@
 <template>
   <client-only>
-    <div class="subscription-wrapper" id="mc_embed_signup">
+    <div id="mc_embed_signup">
       <form
         action="https://dev.us21.list-manage.com/subscribe/post?u=4ebca535469760da3df7fc52d&id=3ccaa29823&f_id=00a9fae6f0"
         method="post"
@@ -99,19 +99,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.subscription-wrapper {
-  background-color: #999;
-  color: #333;
-  margin: 50px auto 50px; /* Added margin-bottom */
-  text-align: center;
-  width: 1040px;
-  max-height: 40vh;
-  overflow: auto;
-  border-radius: 15px;
-  padding: 50px 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: "Poppins", sans-serif; /* Changed font */
-}
-</style>
