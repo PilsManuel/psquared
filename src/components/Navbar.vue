@@ -17,14 +17,19 @@ export default {
 <template>
   <header>
     <nav>
-      <ul>
-        <li>
-          <a href="#" @click="scrollToSection('about')">About</a>
-        </li>
-        <li>
-          <a href="#" @click="scrollToSection('Next')">What's Next?</a>
-        </li>
-      </ul>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="#">psquared</a>
+        </div>
+        <ul class="menu-items">
+          <li>
+            <a href="#" @click="scrollToSection('about')">About</a>
+          </li>
+          <li>
+            <a href="#" @click="scrollToSection('Next')">What's Next?</a>
+          </li>
+        </ul>
+      </div>
     </nav>
   </header>
 </template>
@@ -39,61 +44,79 @@ header {
   text-align: center;
 }
 
-nav ul {
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  padding: 0 20px;
+}
+
+.logo a {
+  color: #fff;
+  font-family: "Poppins", "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1.6em;
+  text-decoration: none; /* Ensure no underline for logo */
+}
+
+nav .menu-items {
   list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
-nav ul li {
-  display: inline-block;
-  margin-right: 100px;
+nav .menu-items li {
+  margin-right: 30px;
 }
 
-nav ul li:last-child {
+nav .menu-items li:last-child {
   margin-right: 0;
 }
 
-nav ul li a {
+nav .menu-items li a {
   text-decoration: none;
   color: #fff;
   font-family: "Poppins", "Roboto", sans-serif;
   font-weight: 500;
-  font-size: 1.4em;
+  font-size: 1.1em;
   position: relative;
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-  color: #ffd700; /* Change to desired hover color */
+nav .menu-items li a:hover {
+  color: #ffd700; /* Hover color */
 }
 
-nav ul li a:hover::before {
+nav .menu-items li a:hover::before {
   content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #fff; /* Change to desired underline color */
+  background-color: #fff; /* Underline color */
 }
 
-nav ul li a:hover::after {
+nav .menu-items li a:hover::after {
   content: "";
   position: absolute;
   bottom: -2px;
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #222; /* Change to desired underline color */
+  background-color: #222; /* Background color for hover effect */
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
 
-nav ul li a:hover::before,
-nav ul li a:hover::after {
+nav .menu-items li a:hover::before,
+nav .menu-items li a:hover::after {
   transform-origin: right;
 }
 
-nav ul li a:hover::after {
+nav .menu-items li a:hover::after {
   transform-origin: left;
   transition-delay: 0.1s;
 }
