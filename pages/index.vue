@@ -1,12 +1,12 @@
 <script lang="ts">
-import Subscription from "./src/components/Subscription.vue";
-import HeroImage from "./src/components/Hero.vue";
-import Navbar from "./src/components/Navbar.vue";
-import About from "./src/components/About.vue";
-import PsquaredFooter from "./src/components/Footer.vue";
-import Tile from "./src/components/Tile.vue";
-import Services from "./src/components/Services.vue";
-import Apps from "./src/components/Apps.vue";
+import Subscription from "../src/components/Subscription.vue";
+import HeroImage from "../src/components/Hero.vue";
+import Navbar from "../src/components/Navbar.vue";
+import About from "../src/components/About.vue";
+import PsquaredFooter from "../src/components/Footer.vue";
+import Tile from "../src/components/Tile.vue";
+import Services from "../src/components/Services.vue";
+import Apps from "../src/components/Apps.vue";
 
 export default {
   components: {

@@ -3,22 +3,17 @@
     <hr />
     <div class="footer-container">
       <div class="footer-section">
-        <h3>Frequent Updates</h3>
-        <a href="https://twitter.com/Graffino" target="_blank">Twitter</a>
-        <a href="https://github.com/Graffino" target="_blank">Github</a>
-        <a href="https://linkedin.com/company/Graffino" target="_blank"
-          >LinkedIn</a
-        >
-        <a href="https://medium.com/@Graffino" target="_blank">Medium</a>
-        <a href="https://instagram.com/GraffinoWeb" target="_blank"
-          >Instagram</a
-        >
-      </div>
-      <!-- Additional sections can be added here -->
-      <div class="footer-section footer-right">
         <h3 class="privacy-section">© 2024 psquared</h3>
-        <a href="/privacy-policy">Privacy Policy</a>
-        <a href="/terms-of-service">Terms of Service</a>
+        <nuxt-link
+          to="/privacy-policy"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Privacy Policy</nuxt-link
+        >
+        |
+        <nuxt-link to="/terms" target="_blank" rel="noopener noreferrer"
+          >Terms and Conditions</nuxt-link
+        >
       </div>
     </div>
   </footer>
@@ -35,35 +30,32 @@ export default {
   background-color: var(--text-color);
   color: #fff;
   font-family: "Poppins", sans-serif;
-  align-items: end;
+  align-items: center;
 }
 
 .footer-container {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   padding: 0 24px 24px 24px;
 }
 
 .footer-section {
-  display: flex;
-  flex-direction: column;
-}
-
-.footer-section.footer-right {
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-section h3 {
   color: #fff;
-  margin-bottom: 10px;
-  font-size: 15px;
+  margin-bottom: 16px;
 }
 
 .footer-section a {
   color: #fff;
   margin-bottom: 5px;
   transition: color 0.3s ease;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .footer-section a:hover {

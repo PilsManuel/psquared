@@ -4,6 +4,7 @@ export default defineNuxtConfig({
       htmlAttrs: { lang: "en" },
     },
   },
+  modules: ["@nuxt/content"],
   css: [
     "@/assets/css/main.css",
     "@fortawesome/fontawesome-svg-core/styles.css",
