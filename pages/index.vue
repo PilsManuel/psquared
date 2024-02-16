@@ -32,9 +32,9 @@ export default {
     <HeroImage alt="Hero Image" />
     <div class="content">
       <div class="wrapper">
-        <Tile :title="'Who are we?'"><About /></Tile>
-        <Services />
-        <Apps />
+        <Tile id="about" :title="'Who are we?'"><About /></Tile>
+        <Services id="services" />
+        <Apps id="apps" />
 
         <Tile :title="'Subscribe'"> <Subscription /> </Tile>
       </div>

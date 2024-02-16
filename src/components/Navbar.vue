@@ -1,17 +1,26 @@
-<script lang="ts">
-export default {
-  methods: {
-    scrollToSection(refName: string) {
-      // does not work yet as component based refs
-      this.$nextTick(() => {
-        const element = this.$refs[refName];
-        if (element) {
-          (element as HTMLElement).scrollIntoView({ behavior: "smooth" });
-        }
-      });
-    },
-  },
+<script setup lang="ts">
+import { ref, nextTick } from "vue";
+
+interface SectionRefs {
+  [key: string]: Ref<HTMLElement | undefined>;
+}
+
+const about = ref<HTMLElement>();
+const services = ref<HTMLElement>();
+const apps = ref<HTMLElement>();
+
+const sectionRefs: SectionRefs = {
+  about,
+  services,
+  apps,
 };
+
+function scrollToSection(sectionId: string) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: "smooth" });
+  }
+}
 </script>
 
 <template>
@@ -29,7 +38,7 @@ export default {
             <a href="#" @click="scrollToSection('services')">Services</a>
           </li>
           <li>
-            <a href="#" @click="scrollToSection('Next')">What's Next?</a>
+            <a href="#" @click="scrollToSection('apps')">What's Next?</a>
           </li>
         </ul>
       </div>
