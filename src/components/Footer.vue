@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <hr />
+    <hr style="border-color: var(--primary-color)" />
     <div class="footer-container">
       <div class="footer-section">
         <h3 class="privacy-section">© 2024 psquared</h3>
@@ -28,7 +28,7 @@ export default {
 <style scoped>
 .footer {
   background-color: var(--text-color);
-  color: #fff;
+  color: var(--primary-color);
   font-family: "Poppins", sans-serif;
   align-items: center;
 }
@@ -47,12 +47,12 @@ export default {
 }
 
 .footer-section h3 {
-  color: #fff;
+  color: var(--primary-color);
   margin-bottom: 16px;
 }
 
 .footer-section a {
-  color: #fff;
+  color: var(--primary-color);
   margin-bottom: 5px;
   transition: color 0.3s ease;
   font-size: 16px;
@@ -69,7 +69,7 @@ export default {
 }
 
 a {
-  color: #fff;
+  color: var(--primary-color);
   text-decoration: none;
   font-size: 12px;
   transition: color 0.3s ease;
