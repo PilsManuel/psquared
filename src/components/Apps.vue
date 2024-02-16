@@ -23,6 +23,7 @@
         experience. So whenever you find yourself pondering, "What's next?" —
         we've got the answer.
       </p>
+      <h3>Coming soon!</h3>
       <div class="store-icons">
         <img src="/images/google-play-badge.png" alt="" />
         <img id="app-store-icon" src="/images/ios-badge.svg" alt="" />
@@ -75,6 +76,8 @@ h3 {
   display: flex;
   justify-content: center;
   gap: 18px;
+  filter: grayscale(100%);
+  opacity: 0.4;
 }
 
 #app-store-icon {
