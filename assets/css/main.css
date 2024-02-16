@@ -1,0 +1,58 @@
+@import "./variables.css";
+
+/* Define the bold weight */
+@font-face {
+  font-family: "Neue Regrade";
+  src: url("~/assets/fonts/neue_regrade/Neue Regrade Bold.otf")
+    format("opentype");
+  font-weight: bold; /* Specify the font-weight for this font face */
+  font-style: normal;
+}
+
+/* Define the light weight */
+@font-face {
+  font-family: "Neue Regrade";
+  src: url("~/assets/fonts/neue_regrade/Neue Regrade Light.otf")
+    format("opentype");
+  font-weight: 300; /* Light weight is often 300 */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Neue Regrade";
+  src: url("~/assets/fonts/neue_regrade/Neue Regrade medium.otf")
+    format("opentype");
+  font-weight: medium;
+  font-style: normal;
+}
+
+/* Apply the bold weight to h1 elements */
+h1 {
+  font-family: "Neue Regrade", sans-serif;
+  font-weight: bold;
+}
+
+h2 {
+  font-family: "Neue Regrade", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1.44px;
+  margin-bottom: 24px;
+}
+
+h3 {
+  font-family: "Neue Regrade", sans-serif;
+  font-weight: 500;
+  letter-spacing: 1.44px;
+}
+
+/* Apply the light weight to p elements */
+p,
+div {
+  font-family: "Neue Regrade", sans-serif;
+  font-weight: 300; /* Match the font-weight specified in the @font-face rule */
+  font-size: 21px;
+}
+
+body {
+  background-color: var(--background-color);
+}
