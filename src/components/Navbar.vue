@@ -1,15 +1,15 @@
 <script lang="ts">
 export default {
   methods: {
-    // scrollToSection(refName) {
-    //   // does not work yet as component based refs
-    //   this.$nextTick(() => {
-    //     const element = this.$refs[refName];
-    //     if (element) {
-    //       element.scrollIntoView({ behavior: "smooth" });
-    //     }
-    //   });
-    // },
+    scrollToSection(refName: string) {
+      // does not work yet as component based refs
+      this.$nextTick(() => {
+        const element = this.$refs[refName];
+        if (element) {
+          (element as HTMLElement).scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    },
   },
 };
 </script>

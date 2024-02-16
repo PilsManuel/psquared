@@ -10,7 +10,7 @@
     @mouseover="iconHovered = true"
     @mouseleave="iconHovered = false"
   >
-    <div class="tile-header">
+    <div class="tile-header" v-if="iconClass || svgPath || title">
       <!-- Conditionally render an icon or an svg -->
       <font-awesome-icon
         v-if="iconClass"
