@@ -7,6 +7,8 @@
       color: textColor,
       maxHeight: maxHeight,
     }"
+    @mouseover="iconHovered = true"
+    @mouseleave="iconHovered = false"
   >
     <div class="tile-header">
       <!-- Conditionally render an icon or an svg -->
@@ -14,8 +16,6 @@
         v-if="iconClass"
         id="icon"
         :icon="iconClass"
-        @mouseover="iconHovered = true"
-        @mouseleave="iconHovered = false"
         :style="{
           fontSize: iconSize,
           color: iconHovered ? onHoverIconColor : iconColor,
@@ -32,7 +32,12 @@
         {{ title }}
       </span>
     </div>
-    <div class="tile-content">
+    <div
+      class="tile-content"
+      :class="{
+        'tile-hovered': iconHovered,
+      }"
+    >
       <slot></slot>
     </div>
   </div>
@@ -137,5 +142,9 @@ export default {
   flex: 2;
   word-break: break-word;
   padding: 1em;
+}
+
+.tile-hovered ::v-deep h3 {
+  color: var(--hover-color) !important;
 }
 </style>
