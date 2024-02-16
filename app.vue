@@ -75,5 +75,6 @@ ul {
 }
 .wrapper {
   margin: 0 24px;
+  margin-bottom: 64px;
 }
 </style>

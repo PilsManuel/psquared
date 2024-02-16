@@ -1,4 +1,10 @@
 <template>
+  <p style="font-weight: 700; font-size: 22px">Join our journey!</p>
+  <p>
+    Subscribe for the latest updates and insights on <b>What's Next</b> and all
+    things <b>psquared</b>. Be the first to know about our new features and
+    developments.
+  </p>
   <client-only>
     <div id="mc_embed_signup">
       <form
@@ -11,18 +17,16 @@
         novalidate
       >
         <div id="mc_embed_signup_scroll">
-          <div class="indicates-required">
-            <span class="asterisk">*</span> indicates required
-          </div>
-          <div class="mc-field-group">
-            <label for="mce-EMAIL"
-              >Email Address <span class="asterisk">*</span></label
+          <div class="indicates-required"></div>
+          <div class="mc-field-group" style="">
+            <label style="text-align: left" for="mce-EMAIL"
+              >Email Address</label
             >
             <input
+              class="email"
               type="email"
               value=""
               name="EMAIL"
-              class="required email"
               id="mce-EMAIL"
               required
             />
@@ -53,8 +57,8 @@
             <div class="clear foot">
               <input
                 type="submit"
-                value="Subscribe"
-                name="subscribe"
+                value="submit"
+                name="submit"
                 id="mc-embedded-subscribe"
                 class="button"
               />
@@ -98,3 +102,99 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+/* Assuming --primary-color, --secondary-color, and --text-color are defined in the root or another higher-level style sheet */
+/* Form and Field Styles */
+#mc_embed_signup {
+  font-family: "Your font family", sans-serif; /* Update with your actual font family */
+  color: var(--text-color);
+}
+
+#mc_embed_signup_scroll {
+  background-color: var(
+    --secondary-color
+  ); /* Choose a secondary color that fits your theme */
+  padding: 20px;
+  border-radius: 8px; /* Optional: if you use rounded corners */
+}
+
+.email {
+  background-color: var(--primary-color);
+  margin: 4px 0 16px 0px;
+  color: var(--text-color);
+  border: 2px solid var(--text-color); /* Change border color if needed or remove for no border */
+  padding: 12px 24px;
+  border-radius: 4px; /* Slightly rounded corners for the input field */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Button Styles */
+.button {
+  background-color: var(
+    --primary-color
+  ); /* Primary color for your CTA button */
+  color: var(
+    --primary-color
+  ); /* Text color for the button, often white or another light color */
+  border: none; /* No border for the button */
+  padding: 12px 24px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  background-color: var(--text-color);
+  border-radius: 4px; /* Rounded corners for the button */
+  text-transform: uppercase; /* Optional: if you use uppercase text for CTAs */
+  font-weight: bold; /* Optional: if you want bold text on the button */
+  cursor: pointer; /* Hand cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.button:hover {
+  color: var(--accent-color);
+}
+
+/* Label Styles */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: normal; /* Match the font-weight with your site's design */
+}
+
+/* Response Message Styles */
+#mce-responses .response {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+#mce-error-response {
+  color: #ff5c5c; /* Red text color for error messages */
+  border: 1px solid #ff5c5c; /* Optional: add a subtle red border */
+  background-color: transparent; /* No background color */
+  padding: 5px 10px;
+  border-radius: 4px; /* Optional: if you want rounded corners */
+  display: none; /* Initially hidden */
+}
+
+#mce-success-response {
+  background-color: #ddffdd; /* Greenish background for success messages */
+  border: 1px solid #5c5c; /* Green border for success messages */
+}
+
+/* Misc */
+.indicates-required {
+  display: none; /* Hide the indicates required text if not necessary */
+}
+
+/* Clearfix for floated elements */
+.clear {
+  clear: both;
+}
+
+/* Hiding the honeypot field to trap bots */
+#mc_embed_signup .mc-field-group input[type="text"] {
+  display: none;
+}
+</style>
