@@ -4,6 +4,9 @@ import HeroImage from "./src/components/Hero.vue";
 import Navbar from "./src/components/Navbar.vue";
 import About from "./src/components/About.vue";
 import PsquaredFooter from "./src/components/Footer.vue";
+import Tile from "./src/components/Tile.vue";
+import Services from "./src/components/Services.vue";
+import Apps from "./src/components/Apps.vue";
 
 export default {
   components: {
@@ -12,6 +15,9 @@ export default {
     Navbar,
     About,
     PsquaredFooter,
+    Tile,
+    Services,
+    Apps,
   },
   data() {
     return {
@@ -24,14 +30,16 @@ export default {
   <div ref="home" class="body">
     <Navbar />
     <HeroImage alt="Hero Image" />
-    <div class="tiles">
-      <div class="tile">
-        <About />
-      </div>
-      <div class="tile">
-        <Subscription />
+    <div class="content">
+      <div class="wrapper">
+        <Tile :title="'Who are we?'"><About /></Tile>
+        <Services />
+        <Apps />
+
+        <Tile :title="'Subscribe'"> <Subscription /> </Tile>
       </div>
     </div>
+
     <PsquaredFooter />
   </div>
 </template>
@@ -41,7 +49,7 @@ body,
 ul {
   margin: 0;
   padding: 0;
-  background-color: #222;
+  /* background-color: #222; */
 }
 /* Hide scrollbar for Chrome, Safari, and Opera */
 ::-webkit-scrollbar {
@@ -53,25 +61,19 @@ ul {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-.tiles {
+.content {
+  padding-top: 64px;
   display: flex;
   flex-direction: column;
-  padding: 0 24px 0 24px;
+  /* margin: 0 24px 0 24px; */
+  /* padding: 0 24px 0 24px; */
+  width: 1040px;
+  margin: 0 auto;
+  max-width: 100%;
+
   display: flex;
 }
-.tile {
-  background-color: #999;
-  color: #333;
-  margin: 50px auto 50px; /* Added margin-bottom */
-  text-align: center;
-  width: 1040px;
-  max-width: 100%;
-  /* max-height: 40vh; */
-  overflow: auto;
-  box-sizing: border-box;
-  border-radius: 15px;
-  padding: 50px 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  font-family: "Poppins", sans-serif; /* Changed font */
+.wrapper {
+  margin: 0 24px;
 }
 </style>

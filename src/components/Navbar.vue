@@ -26,6 +26,9 @@ export default {
             <a href="#" @click="scrollToSection('about')">About</a>
           </li>
           <li>
+            <a href="#" @click="scrollToSection('services')">Services</a>
+          </li>
+          <li>
             <a href="#" @click="scrollToSection('Next')">What's Next?</a>
           </li>
         </ul>
@@ -38,8 +41,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
 
 header {
-  background-color: #222;
-  color: #fff;
+  background-color: var(--text-color);
   padding: 20px 0;
   text-align: center;
 }
@@ -53,9 +55,8 @@ header {
 }
 
 .logo a {
-  color: #fff;
-  font-family: "Poppins", "Roboto", sans-serif;
-  font-weight: 500;
+  color: var(--primary-color);
+  font-family: "Neue Regrade";
   font-size: 1.6em;
   text-decoration: none; /* Ensure no underline for logo */
 }
@@ -77,12 +78,13 @@ nav .menu-items li:last-child {
 
 nav .menu-items li a {
   text-decoration: none;
-  color: #fff;
-  font-family: "Poppins", "Roboto", sans-serif;
-  font-weight: 500;
+  color: var(--primary-color);
+  font-family: "Neue Regrade";
+  font-weight: medium;
   font-size: 1.1em;
   position: relative;
   transition: color 0.3s ease;
+  letter-spacing: 1.8px;
 }
 
 nav .menu-items li a:hover {
@@ -96,7 +98,7 @@ nav .menu-items li a:hover::before {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #fff; /* Underline color */
+  /* background-color: #fff; Underline color */
 }
 
 nav .menu-items li a:hover::after {
@@ -106,7 +108,7 @@ nav .menu-items li a:hover::after {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: #222; /* Background color for hover effect */
+  /* background-color: #222; Background color for hover effect */
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }

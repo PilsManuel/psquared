@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .footer {
-  background-color: #222;
+  background-color: var(--text-color);
   color: #fff;
   font-family: "Poppins", sans-serif;
   align-items: end;
