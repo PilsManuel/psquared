@@ -50,7 +50,8 @@ p,
 div {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 300; /* Match the font-weight specified in the @font-face rule */
-  font-size: 21px;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 body {

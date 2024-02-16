@@ -7,14 +7,27 @@ export default {
 
 <template>
   <p>
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-    amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-    diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-    amet.
+    Just two guys with a passion for coding and providing smart solutions to
+    real-world problems. Our collaboration began with the rise of Large Language
+    Models like Chat GPT. Recognizing their potential, we joined forces.
+  </p>
+  <p>
+    We navigate the digital terrain with transparency and purpose. We believe in
+    coding that speaks for itself and in creating applications that stand up to
+    the challenge. Our goal is straightforward: to deliver software that makes
+    an impact.
+  </p>
+  <p>
+    For those who appreciate direct communication and effective results, we are
+    ready to get to work. Let's build something impactful together.
   </p>
 </template>
+
+<style scoped>
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: start;
+}
+</style>
+```
