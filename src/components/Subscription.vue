@@ -1,6 +1,6 @@
 <template>
   <p style="font-weight: 700; font-size: 22px">Join our journey!</p>
-  <p>
+  <p style="text-align: left">
     Subscribe for the latest updates and insights on <b>What's Next</b> and all
     things <b>psquared</b>. Be the first to know about our new features and
     developments.

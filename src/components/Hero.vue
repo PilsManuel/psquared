@@ -36,7 +36,7 @@ export default {
 }
 @media (min-width: 1050px) {
   .hero-image {
-    max-height: 40vh;
+    max-height: 56vh;
   }
 }
 @media (max-width: 800px) {
