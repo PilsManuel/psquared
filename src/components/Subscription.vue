@@ -6,7 +6,7 @@
     developments.
   </p>
   <client-only>
-    <div id="mc_embed_signup">
+    <div id="mc_embed_signup" v-show="showMessage === ''">
       <form
         action="https://dev.us21.list-manage.com/subscribe/post?u=4ebca535469760da3df7fc52d&id=3ccaa29823&f_id=00a9fae6f0"
         method="post"
@@ -77,6 +77,7 @@
                 class="button"
                 :class="{ 'button-disabled': !isFormValid }"
                 :disabled="!isFormValid"
+                @click="setShowMessage"
               />
               <!-- Optionally include your referral badge here -->
             </div>
@@ -84,6 +85,7 @@
         </div>
       </form>
     </div>
+    <h2 v-show="showMessage !== ''">{{ showMessage }}</h2>
   </client-only>
 </template>
 
@@ -94,6 +96,7 @@ export default {
     return {
       checked: false,
       email: "",
+      showMessage: "",
     };
   },
   components: {
@@ -124,6 +127,13 @@ export default {
     initializeMailchimp() {
       // Initialize any Mailchimp-specific script here if necessary
       // Note: The mc-validate.js script automatically initializes forms designated with the appropriate classes and IDs.
+    },
+    setShowMessage() {
+      if (this.isFormValid) {
+        this.showMessage = "Thank you for subscribing! 🎉";
+      } else {
+        this.showMessage = "Something went wrong. Please try again.";
+      }
     },
   },
   computed: {
