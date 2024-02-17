@@ -7,8 +7,8 @@
       color: textColor,
       maxHeight: maxHeight,
     }"
-    @mouseover="iconHovered = true"
-    @mouseleave="iconHovered = false"
+    @mouseover="toggleHoverState(true)"
+    @mouseleave="toggleHoverState(false)"
   >
     <div class="tile-header" v-if="iconClass || svgPath || title">
       <!-- Conditionally render an icon or an svg -->
@@ -32,12 +32,15 @@
         {{ title }}
       </span>
     </div>
-    <div
-      class="tile-content"
-      :class="{
-        'tile-hovered': iconHovered,
-      }"
-    >
+    <div class="tile-content">
+      <h3
+        :style="{
+          color: iconHovered ? onHoverIconColor : iconColor,
+        }"
+        v-if="h3Content"
+      >
+        {{ h3Content }}
+      </h3>
       <slot></slot>
     </div>
   </div>
@@ -49,6 +52,7 @@ export default {
     title: String,
     iconClass: String,
     svgPath: String,
+    h3Content: String,
     iconSize: {
       type: String,
       default: "64px",
@@ -87,6 +91,11 @@ export default {
       iconHovered: false,
     };
   },
+  methods: {
+    toggleHoverState(isHovered: boolean) {
+      this.iconHovered = isHovered;
+    },
+  },
 };
 </script>
 <style scoped>
@@ -103,12 +112,11 @@ export default {
   align-items: center;
 }
 
-#icon {
-  transition: color 0.3s;
+#icon,
+h3 {
+  transition: color 0.4s;
 }
-#icon:hover {
-  color: var(--hover-color);
-}
+
 .tile-header {
   display: flex;
   justify-content: center;
@@ -136,6 +144,10 @@ export default {
   transform: scale(3);
   filter: invert(100%) invert(5%) sepia(5%) saturate(191%) hue-rotate(315deg)
     brightness(97%) contrast(80%);
+}
+
+h3 {
+  font-size: 26px;
 }
 
 .tile-content {

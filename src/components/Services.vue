@@ -7,32 +7,31 @@
         :background-color="'var(--text-color)'"
         :text-color="'var(--primary-color)'"
         :max-height="'166px'"
-      >
-        <h3>LLM Solutions</h3>
-      </Tile>
+        :h3-content="'LLM Solutions'"
+      />
       <Tile
         :background-color="'var(--text-color)'"
         :text-color="'var(--primary-color)'"
         :icon-class="'fa-desktop'"
         :max-height="'166px'"
+        :h3-content="'Website'"
       >
-        <h3>Website</h3>
       </Tile>
       <Tile
         :background-color="'var(--text-color)'"
         :text-color="'var(--primary-color)'"
         :icon-class="'fa-code'"
         :max-height="'166px'"
+        :h3-content="'Software Development'"
       >
-        <h3>Software Development</h3>
       </Tile>
       <Tile
         :background-color="'var(--text-color)'"
         :text-color="'var(--primary-color)'"
         :icon-class="'fa-mobile-alt'"
         :max-height="'166px'"
+        :h3-content="'App Development'"
       >
-        <h3>App Development</h3>
       </Tile>
     </div>
   </div>
@@ -52,9 +51,6 @@ h2 {
   color: var(--accent-color);
   font-size: 36px;
   color: var(--primary-color);
-}
-h3 {
-  font-size: 26px;
 }
 
 .tile-grid {
