@@ -18,6 +18,42 @@
       >
         <div id="mc_embed_signup_scroll">
           <div class="indicates-required"></div>
+
+          <!-- Checkbox and Nuxt links for terms and privacy policy -->
+          <!-- Checkbox and Nuxt links for terms and privacy policy -->
+          <div class="mc-field-group checkbox-container">
+            <label for="mce-AGREE" class="terms-label" style="text-align: left">
+              <span class="checkbox-custom">
+                <font-awesome-icon
+                  :icon="checked ? 'square-check' : 'square'"
+                  @click="checked = !checked"
+                  class="checkbox-icon"
+                  :class="{ checked: checked }"
+                />
+              </span>
+              <span class="terms-text">
+                I agree with the
+                <nuxt-link
+                  to="/terms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link"
+                >
+                  terms and conditions
+                </nuxt-link>
+                and I recognize the
+                <nuxt-link
+                  to="/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link"
+                >
+                  privacy policy </nuxt-link
+                >.
+              </span>
+            </label>
+          </div>
+
           <div class="mc-field-group" style="">
             <label style="text-align: left" for="mce-EMAIL"
               >Email Address</label
@@ -25,32 +61,10 @@
             <input
               class="email"
               type="email"
-              value=""
+              v-model="email"
               name="EMAIL"
               id="mce-EMAIL"
               required
-            />
-          </div>
-          <!-- Your additional form fields here -->
-          <div id="mce-responses" class="clear">
-            <div
-              class="response"
-              id="mce-error-response"
-              style="display: none"
-            ></div>
-            <div
-              class="response"
-              id="mce-success-response"
-              style="display: none"
-            ></div>
-          </div>
-          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-          <div style="position: absolute; left: -5000px" aria-hidden="true">
-            <input
-              type="text"
-              name="b_4ebca535469760da3df7fc52d_3ccaa29823"
-              tabindex="-1"
-              value=""
             />
           </div>
           <div class="optionalParent">
@@ -61,6 +75,8 @@
                 name="submit"
                 id="mc-embedded-subscribe"
                 class="button"
+                :class="{ 'button-disabled': !isFormValid }"
+                :disabled="!isFormValid"
               />
               <!-- Optionally include your referral badge here -->
             </div>
@@ -72,7 +88,17 @@
 </template>
 
 <script>
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 export default {
+  data() {
+    return {
+      checked: false,
+      email: "",
+    };
+  },
+  components: {
+    "font-awesome-icon": FontAwesomeIcon,
+  },
   mounted() {
     this.loadMailchimpScript();
   },
@@ -100,65 +126,141 @@ export default {
       // Note: The mc-validate.js script automatically initializes forms designated with the appropriate classes and IDs.
     },
   },
+  computed: {
+    isEmailValid() {
+      const re =
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(this.email).toLowerCase());
+    },
+    isFormValid() {
+      return this.checked && this.isEmailValid;
+    },
+  },
 };
 </script>
 
 <style scoped>
-/* Assuming --primary-color, --secondary-color, and --text-color are defined in the root or another higher-level style sheet */
-/* Form and Field Styles */
 #mc_embed_signup {
-  font-family: "Your font family", sans-serif; /* Update with your actual font family */
+  font-family: "Your font family", sans-serif;
   color: var(--text-color);
 }
 
 #mc_embed_signup_scroll {
-  background-color: var(
-    --secondary-color
-  ); /* Choose a secondary color that fits your theme */
+  background-color: var(--secondary-color);
   padding: 20px;
-  border-radius: 8px; /* Optional: if you use rounded corners */
+  border-radius: 8px;
 }
 
 .email {
   background-color: var(--primary-color);
   margin: 4px 0 16px 0px;
   color: var(--text-color);
-  border: 2px solid var(--text-color); /* Change border color if needed or remove for no border */
+  border: 2px solid var(--text-color);
   padding: 12px 24px;
-  border-radius: 4px; /* Slightly rounded corners for the input field */
-  width: 100%; /* Full width */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Button Styles */
-.button {
-  background-color: var(
-    --primary-color
-  ); /* Primary color for your CTA button */
-  color: var(
-    --primary-color
-  ); /* Text color for the button, often white or another light color */
-  border: none; /* No border for the button */
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.checked {
+  color: var(--accent-color);
+  svg {
+    background-color: var(--accent-color) !important;
+  }
+}
+.checkbox-custom {
+  position: absolute;
+  left: 0;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+  svg {
+  }
+}
+
+.checkbox-icon {
+  color: var(--text-color); /* Color of the checkbox when not checked */
+  margin-right: 10px; /* Space between the icon and the label text */
+}
+
+.checkbox-icon {
+  /* Incorrect example, this would fill the square */
+  /* background-color: var(--text-color); */
+  color: var(--text-color);
+}
+
+.checkbox-container input[type="checkbox"]:checked + label .checkbox-icon {
+  color: var(--accent-color); /* Color of the checkbox when checked */
+}
+
+.terms-text {
+  vertical-align: middle;
+}
+
+.link {
+  color: var(--link-color);
+  margin: 0 5px;
+  text-decoration: underline; /* If you want the links to be underlined */
+}
+
+.link:hover {
+  color: var(--hover-color); /* Change color on hover */
+}
+
+.checkbox-container input[type="checkbox"]:checked + label .checkbox-icon {
+  color: var(--accent-color); /* Color of the checkbox when checked */
+}
+
+/* Rest of your CSS */
+
+.button,
+.button-disabled {
+  background-color: var(--primary-color);
+  color: var(--primary-color);
+  border: none;
   padding: 12px 24px;
   font-size: 18px;
   letter-spacing: 2px;
   background-color: var(--text-color);
-  border-radius: 4px; /* Rounded corners for the button */
-  text-transform: uppercase; /* Optional: if you use uppercase text for CTAs */
-  font-weight: bold; /* Optional: if you want bold text on the button */
-  cursor: pointer; /* Hand cursor on hover */
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 .button:hover {
   color: var(--accent-color);
 }
 
+.button-disabled {
+  background-color: #998b7d;
+  cursor: not-allowed;
+  &:hover {
+    color: var(--primary-color);
+  }
+}
+
 /* Label Styles */
 label {
   display: block;
   margin-bottom: 5px;
-  font-weight: normal; /* Match the font-weight with your site's design */
 }
 
 /* Response Message Styles */

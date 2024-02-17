@@ -11,6 +11,8 @@ import {
   faDesktop,
   faMobileAlt,
   faArrowLeft,
+  faSquareCheck,
+  faSquare,
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
@@ -22,7 +24,9 @@ library.add(
   faGlobe,
   faDesktop,
   faMobileAlt,
-  faArrowLeft
+  faArrowLeft,
+  faSquareCheck,
+  faSquare
 );
 
 // This is important, we are going to let Nuxt worry about the CSS

@@ -47,7 +47,8 @@ h3 {
 
 /* Apply the light weight to p elements */
 p,
-div {
+div,
+label {
   font-family: "Neue Regrade", sans-serif;
   font-weight: 300; /* Match the font-weight specified in the @font-face rule */
   font-size: 18px;
