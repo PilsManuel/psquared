@@ -154,7 +154,7 @@ h3 {
   transition: transform 0.4s;
   filter: invert(100%) invert(5%) sepia(5%) saturate(191%) hue-rotate(315deg)
     brightness(97%) contrast(80%);
-  @media (max-width: 400px) {
+  @media (max-width: 420px) {
     transform: scale(2);
     width: 100%;
   }
