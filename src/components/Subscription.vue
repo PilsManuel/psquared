@@ -159,6 +159,7 @@ export default {
   padding: 12px 24px;
   border-radius: 4px;
   width: 100%;
+  font-size: 16px;
   box-sizing: border-box;
 }
 
