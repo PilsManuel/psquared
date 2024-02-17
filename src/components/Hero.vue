@@ -28,9 +28,28 @@ export default {
 }
 
 .hero-image {
-  width: 100vw;
-  height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   background-color: #222;
+  transition: transform 0.5s ease;
+}
+@media (min-width: 1050px) {
+  .hero-image {
+    max-height: 40vh;
+  }
+}
+@media (max-width: 800px) {
+  .hero-image {
+    transform: scale(1.3);
+    object-position: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-image {
+    transform: scale(1.6);
+    object-position: center;
+  }
 }
 </style>

@@ -31,7 +31,7 @@ export default {
     <Navbar />
     <HeroImage alt="Hero Image" />
     <div class="content">
-      <div class="wrapper">
+      <div class="wrapper" id="about-inner">
         <Tile id="about" :title="'Who are we?'"><About /></Tile>
         <Services id="services" />
         <Apps id="apps" />
@@ -49,32 +49,33 @@ body,
 ul {
   margin: 0;
   padding: 0;
-  /* background-color: #222; */
 }
-/* Hide scrollbar for Chrome, Safari, and Opera */
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge, and Firefox */
 * {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .content {
   padding-top: 64px;
   display: flex;
   flex-direction: column;
-  /* margin: 0 24px 0 24px; */
-  /* padding: 0 24px 0 24px; */
   width: 1040px;
   margin: 0 auto;
   max-width: 100%;
-
   display: flex;
 }
 .wrapper {
   margin: 0 24px;
   margin-bottom: 64px;
+  @media (max-width: 490px) {
+    margin: 0 0px;
+  }
+}
+
+#about ::v-deep .tile {
+  background-color: aliceblue;
 }
 </style>

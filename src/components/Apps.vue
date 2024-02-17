@@ -78,9 +78,21 @@ h3 {
   gap: 18px;
   filter: grayscale(100%);
   opacity: 0.4;
+  margin-left: -18px;
+  @media (max-width: 500px) {
+    gap: 0;
+  }
+  @media (max-width: 450px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 #app-store-icon {
   width: 194px;
+  @media (max-width: 450px) {
+    width: 211px;
+    transition: width 0.3s ease;
+  }
 }
 </style>

@@ -61,6 +61,9 @@ header {
   align-items: center;
   text-align: left;
   padding: 0 20px;
+  @media (max-width: 500px) {
+    padding: 0 10px;
+  }
 }
 
 .logo a {
@@ -68,6 +71,9 @@ header {
   font-family: "Neue Regrade";
   font-size: 1.6em;
   text-decoration: none; /* Ensure no underline for logo */
+  @media (max-width: 500px) {
+    font-size: 1.2em;
+  }
 }
 
 nav .menu-items {
@@ -79,6 +85,10 @@ nav .menu-items {
 
 nav .menu-items li {
   margin-right: 30px;
+  @media (max-width: 500px) {
+    margin-right: 12px;
+    font-size: 12px;
+  }
 }
 
 nav .menu-items li:last-child {

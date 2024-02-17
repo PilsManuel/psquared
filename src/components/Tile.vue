@@ -1,7 +1,10 @@
 <template>
   <div
     class="tile"
-    :class="{ 'is-transparent': isTransparent }"
+    :class="{
+      'is-transparent': isTransparent,
+      'break-800': title,
+    }"
     :style="{
       backgroundColor: backgroundColor,
       color: textColor,
@@ -49,7 +52,7 @@
 <script lang="ts">
 export default {
   props: {
-    title: String,
+    title: { type: String, default: null },
     iconClass: String,
     svgPath: String,
     h3Content: String,
@@ -112,6 +115,12 @@ export default {
   align-items: center;
 }
 
+.break-800 {
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
+}
+
 #icon,
 h3 {
   transition: color 0.4s;
@@ -142,8 +151,13 @@ h3 {
 
 #image {
   transform: scale(3);
+  transition: transform 0.4s;
   filter: invert(100%) invert(5%) sepia(5%) saturate(191%) hue-rotate(315deg)
     brightness(97%) contrast(80%);
+  @media (max-width: 400px) {
+    transform: scale(2);
+    width: 100%;
+  }
 }
 
 h3 {
