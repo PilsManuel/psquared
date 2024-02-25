@@ -70,8 +70,8 @@ ul {
 .wrapper {
   margin: 0 24px;
   margin-bottom: 64px;
-  @media (max-width: 490px) {
-    margin: 0 0px;
+  @media (max-width: 360px) {
+    margin: 0 8px;
   }
 }
 
